@@ -6,6 +6,7 @@ checkMobileNum="^[0-9]{2}[[:space:]][0-9]{10}$"
 checkPassword1="^[a-zA-Z]{8,}$"
 checkPassword2="[a-zA-Z]*[A-Z]+[a-zA-Z]*$"
 checkPassword3="^(.*+[0-9]+.*[A-Z]+[a-zA-Z0-9])"
+checkPassword3="^(.*+[0-9]+.*[A-Z]+.*[\@#!%^&*()[].><|]+.*[a-zA-Z0-9])$"
 
 function checkFirstName(){
 	read -p "Enter First Name :: " firstName 
@@ -79,6 +80,16 @@ function checkPassword3(){
         fi
 }
 
+function checkPassword4(){
+        read -p "Enter your password :: " password
+        if [[ $password =~ $checkPassword4 ]] 
+        then
+                echo "Password is valid"
+        else
+                echo "Password is Invalid"
+        fi
+}
+
 
 
 
@@ -89,3 +100,4 @@ checkMobileNum
 checkPassword1
 checkPassword2
 checkPassword3
+checkPassword4
